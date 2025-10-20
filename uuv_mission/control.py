@@ -26,7 +26,7 @@ class PDController(Controller):
         return u.item()
     
 class MPCController(Controller):
-    def __init__(self, A: np.ndarray, B: np.ndarray, C: np.ndarray, D: np.ndarray, horizon: int = 10):
+    def __init__(self, A: np.ndarray, B: np.ndarray, C: np.ndarray, D: np.ndarray, horizon: int, Q: np.ndarray, R: np.ndarray):
         super().__init__(A, B, C, D)
         self.horizon = horizon
         self.Q = Q
