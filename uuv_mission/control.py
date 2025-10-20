@@ -8,7 +8,7 @@ class Controller:
         self.C = C
         self.D = D
 
-class PDContoller(Controller):
+class PDController(Controller):
     def __init__(self, A: np.ndarray, B: np.ndarray, C: np.ndarray, D: np.ndarray, kp: float = 0.15, kd: float = 0.6):
         super().__init__(A, B, C, D)
         self.kp = kp
