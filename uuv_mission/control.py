@@ -41,7 +41,7 @@ class MPCController(Controller):
         constraints = [x[:, 0] == x0]
 
         for t in range(self.horizon):
-            cost += cp.quad_form(y[:, t] - reference[;, t], self.Q) + cp.quad_form(u[:, t], self.R)
+            cost += cp.quad_form(y[:, t] - reference[:, t], self.Q) + cp.quad_form(u[:, t], self.R)
             constraints += [
                 x[:, t + 1] == self.A @ x[:, t] + self.B @ u[:, t],
                 y[:, t] == self.C @ x[:, t] + self.D @ u[:, t]
