@@ -12,7 +12,7 @@ class PDController(Controller):
     def __init__(self, A: np.ndarray, B: np.ndarray, C: np.ndarray, D: np.ndarray, Kp: float = 0.15, Kd: float = 0.6):
         super().__init__(A, B, C, D)
         self.Kp = Kp
-        self.Kd = Kdd
+        self.Kd = Kd
         self.prev_error = 0.0
 
     def compute_action(self, x0: np.ndarray, reference: float) -> float:
