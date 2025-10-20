@@ -39,6 +39,14 @@ class Submarine:
         self.vel_x = 1
         self.vel_y = 0
     
+    def get_state_space(self):
+
+        A = np.array([[0,1], [0, -self.drag / self.mass]])
+        B = np.array([[0], [self.actuator_gain / self.mass]])
+        C = np.array([[1,0]])
+        D = np.array([[0]])
+        return A, B, C, D
+    
 class Trajectory:
     def __init__(self, position: np.ndarray):
         self.position = position  
