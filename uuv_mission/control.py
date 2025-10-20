@@ -9,10 +9,10 @@ class Controller:
         self.D = D
 
 class PDController(Controller):
-    def __init__(self, A: np.ndarray, B: np.ndarray, C: np.ndarray, D: np.ndarray, kp: float = 0.15, kd: float = 0.6):
+    def __init__(self, A: np.ndarray, B: np.ndarray, C: np.ndarray, D: np.ndarray, Kp: float = 0.15, Kd: float = 0.6):
         super().__init__(A, B, C, D)
-        self.kp = kp
-        self.kd = kd
+        self.Kp = Kp
+        self.Kd = Kdd
         self.prev_error = 0.0
 
     def compute_action(self, x0: np.ndarray, reference: float) -> float:
