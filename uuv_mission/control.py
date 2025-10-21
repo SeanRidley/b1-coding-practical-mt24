@@ -21,7 +21,7 @@ class PDController(Controller):
         derivative = (error - self.prev_error)
 
         u = self.Kp * error + self.Kd * derivative
-        self.previous_error = error
+        self.prev_error = error
 
         return u.item()
     
